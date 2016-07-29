@@ -1,0 +1,21 @@
+<div>
+<select name="repeatSelect" id="repeatSelect" ng-model="selectedCategory" ng-change="selectCategoryItems(selectedCategory)" class="form-control">
+    <option ng-repeat="category in toyCategory" value="{{category.CategoryName}}">{{category.CategoryName}}</option>
+</select>
+    <table class="table table-striped">
+        <tr ng-repeat="item in renderItems" ng-init="mainIndex=$index">
+            <td ng-repeat="(key,value) in item" class="td-background">
+                <table>
+                    <th title="{{key}}" ng-if="mainIndex===0">
+                        <span>{{key}}</span>
+                    </th>
+                    <tr>
+                        <td>
+                            {{value}}
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+    </table>
+</div>
